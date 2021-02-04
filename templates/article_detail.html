@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block string %}
+
+{% for article in articles %}
+<main role="main" class="container">
+    <h1 class="mt-5">{{article.title}}</h1>
+    <p class="lead"> {{article.author}}</p>
+    <p> {{article.content|safe}}</p>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted">Motive-2020</span>
+    </div>
+  </footer>
+{% endfor %}
+
+{% endblock %}

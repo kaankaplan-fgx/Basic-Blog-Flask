@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block string %}
+<center><h1>MAKALELER</h1></center>
+<hr>
+
+<div class="list-group">
+{% for article in articles %}
+<a href="makaleler/{{article.id}}" class="list-group-item list-group-item-action flex-column align-items-start ">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{article.title}}</h5>
+      <small>{{article.create_date}}</small>
+    </div>
+    <p class="mb-1">{{article.author}}</p>
+    
+  </a>
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+    <a class="navbar-brand" href="anasayfa">Kripto Blog</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample09">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="anasayfa" style="color: black;">Anasayfa </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="hakkimizda" style="color: black;">Hakkımızda </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="makaleler" style="color: black;">Makaleler </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto" style="position: absolute; right: 30px;">
+        {% if session["logged_in"] %}
+        <li class="nav-item active">
+          <a class="nav-link" href="dashboard" style="color: black;">Kontrol Paneli</a>
+        </li>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="logout" style="color: black;">Çıkış Yap</a>
+      </li>
+    </li>
+
+        {% else  %}
+        <li class="nav-item active">
+          <a class="nav-link" href="login" style="color: black;">Giriş</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="register" style="color: black;">Kayıt Ol</a>
+  
+          </li>
+        {% endif %}
+
+
+
+      </ul>
+      
+    </div>
+  </nav>

@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block string %}
+<center><h1>Kontrol Paneli</h1></center>
+
+<h3>Hoşgeldin {{session["username"]}}</h3>
+<br>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Makaleyi Görüntüle</th>
+        <th scope="col">Oluşturulma Tarihi</th>
+        <th scope="col">Güncelle</th>
+        <th scope="col">Sil</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for article in articles %}
+        <tr>
+            <th scope="row">{{article.id}}</th>
+            <td>{{article.title}}</td>
+            <td><a href="makaleler/{{article.id}}" class="btn btn-dark" role="button">Makaleyi Görüntüle</a></td>
+            <td>{{article.create_date}}</td>
+            <td><a href="update/{{article.id}}" class="btn btn-info" role="button">Güncelle</a></td>
+            <td><a href="delete/{{article.id}}" class="btn btn-warning" role="button">Sil</a></td>
+          </tr>
+        {% endfor %}
+
+
+    </tbody>
+  </table>
+<a href="addarticle" class="btn btn-primary" role="button">Makale Ekle</a>
+
+{% endblock %}
